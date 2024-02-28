@@ -1,0 +1,31 @@
+class ItemPiquenique(val nome: String, val item: String, val classificacao: Int)
+
+fun main() {
+    
+    val itensPiquenique = listOf(
+        ItemPiquenique("Elvis", "Coxinha", 1),
+        ItemPiquenique("Anthony", "Pão com ovo", 2),
+        ItemPiquenique("Carlos", "Refrigerante", 3),
+        ItemPiquenique("Felipe", "Refrigerante", 1),
+        ItemPiquenique("Lucas", "Risole", 1)
+    )
+    
+    var totalSalgado = 0
+    var totalDoces = 0
+    var totalRefrigerantes = 0
+
+    for (item in itensPiquenique){ 
+        if (item.classificacao == 1) { 
+            totalDoces++
+        } else if (item.classificacao == 2) { 
+            totalSalgado++
+        }
+        else if (item.classificacao == 3) { 
+            totalRefrigerantes++
+        }
+    }
+
+    println("Total de Salgados é $totalSalgado")
+    println("Total de doces é $totalDoces")
+    println("Total de refrigerantes é $totalRefrigerantes")
+}
